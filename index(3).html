@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Sayangg 🦕💛</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root{
+  --yellow:#f8ca45;
+  --yellow2:#ffe78e;
+  --cream:#fff9e7;
+  --pink:#f59b9c;
+  --brown:#5d4829;
+  --white:#fff;
+  --shadow:#ead894;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Quicksand',sans-serif;color:var(--brown);
+  background:var(--cream);overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Fredoka',sans-serif}
+button{font-family:inherit}
+a{text-decoration:none;color:inherit}
+
+#opening{
+  position:fixed;inset:0;z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#fff8d9,#ffe99b);
+  transition:.8s ease;
+}
+#opening.hide{opacity:0;pointer-events:none}
+.open-card{
+  width:min(90%,430px);text-align:center;background:#fff;
+  border:3px solid #f6d66a;border-radius:35px;padding:35px 25px;
+  box-shadow:0 14px 0 #eddc9b;
+}
+.open-dino{width:190px;height:210px;object-fit:contain;border-radius:25px;margin-bottom:12px}
+.open-card h1{font-size:42px;color:#e8ac18;line-height:1}
+.open-card p{margin:12px 0 22px;line-height:1.6}
+.open-btn{
+  border:0;background:var(--pink);color:#fff;padding:15px 24px;
+  border-radius:18px;font-weight:800;font-size:16px;cursor:pointer;
+  box-shadow:0 6px 0 #d87b7c;
+}
+.open-btn:active{transform:translateY(4px);box-shadow:0 2px 0 #d87b7c}
+
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background-image:radial-gradient(#efc950 1.4px,transparent 1.4px);
+  background-size:27px 27px;opacity:.28;
+}
+
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:13px 6%;background:rgba(255,249,231,.86);
+  backdrop-filter:blur(12px);border-bottom:2px solid rgba(239,194,63,.2)
+}
+.logo{font:700 23px 'Fredoka';color:#e5a915}
+.nav-links{display:flex;gap:20px;align-items:center}
+.nav-links a{font-weight:700;font-size:13px}
+.music{
+  border:0;background:var(--yellow);color:#fff;border-radius:999px;
+  padding:10px 15px;font-weight:800;cursor:pointer;
+  box-shadow:0 4px 0 #d8a828
+}
+.music:active{transform:translateY(2px);box-shadow:0 2px 0 #d8a828}
+
+.hero{
+  min-height:100vh;padding:120px 6% 70px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.hero-inner{
+  width:min(1120px,100%);display:grid;grid-template-columns:1fr 1fr;
+  gap:45px;align-items:center;
+}
+.kicker{
+  display:inline-block;background:#fff0ad;padding:9px 15px;border-radius:999px;
+  font-weight:800;color:#8a6718;margin-bottom:16px
+}
+.hero h1{font-size:clamp(55px,8vw,92px);line-height:.91;color:#e9ad1b}
+.hero h1 span{color:var(--pink)}
+.hero-copy{font-size:18px;line-height:1.75;max-width:580px;margin:22px 0}
+.scroll-btn{
+  display:inline-flex;align-items:center;gap:8px;background:#fff;color:#9b741b;
+  border:2px solid #f4d469;border-radius:18px;padding:13px 18px;font-weight:800;
+  box-shadow:0 5px 0 #ecdba0
+}
+.hero-art{position:relative;text-align:center}
+.hero-nailong{
+  width:min(440px,90%);max-height:520px;object-fit:cover;
+  border-radius:45% 45% 32% 32%;border:8px solid #fff;
+  box-shadow:0 18px 0 #f0d879,0 24px 35px rgba(91,72,41,.13);
+  animation:float 3.5s ease-in-out infinite
+}
+@keyframes float{50%{transform:translateY(-12px) rotate(1deg)}}
+.sticker{position:absolute;font-size:42px;animation:wiggle 2.3s ease-in-out infinite}
+.s1{top:2%;right:5%}.s2{bottom:7%;left:2%;animation-delay:.7s}.s3{top:40%;right:-3%;animation-delay:1.1s}
+@keyframes wiggle{50%{transform:rotate(10deg) scale(1.08)}}
+
+section{padding:95px 6%}
+.wrap{width:min(1050px,100%);margin:auto}
+.title{text-align:center;color:#e5a913;font-size:43px;margin-bottom:10px}
+.subtitle{text-align:center;line-height:1.7;max-width:680px;margin:0 auto 45px}
+
+.letter{
+  background:#fff;border:3px solid #f3d46a;border-radius:30px;padding:42px;
+  box-shadow:0 13px 0 var(--shadow);position:relative
+}
+.letter:after{content:"🦕";position:absolute;right:25px;top:18px;font-size:35px}
+.letter p{font-size:17px;line-height:1.9;margin-bottom:16px}
+.sign{font:600 25px 'Fredoka';color:var(--pink);text-align:right;margin-top:22px}
+
+.photo-section{background:#fff3bf}
+.gallery{
+  display:grid;grid-template-columns:1fr 1.2fr;gap:24px;align-items:center
+}
+.nailong-pair{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.nail-card{
+  background:#fff;padding:10px 10px 18px;border-radius:20px;
+  box-shadow:0 8px 0 #e9d899;transform:rotate(-3deg)
+}
+.nail-card:nth-child(2){transform:rotate(4deg);margin-top:35px}
+.nail-card img{width:100%;height:260px;object-fit:cover;border-radius:14px}
+.nail-card p{text-align:center;font-weight:800;margin-top:10px;color:#d79c14}
+.couple{
+  background:#fff;padding:14px;border-radius:24px;box-shadow:0 12px 0 #e7d493;
+  transform:rotate(2deg)
+}
+.couple img{width:100%;display:block;border-radius:16px;max-height:660px;object-fit:cover}
+.couple-caption{text-align:center;font:600 20px 'Fredoka';color:#e58e91;padding:14px 0 3px}
+
+.memories{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.memory{
+  background:#fff;border:2px solid #f3dd93;border-radius:25px;padding:27px 22px;
+  text-align:center;transition:.25s
+}
+.memory:hover{transform:translateY(-6px);box-shadow:0 10px 0 #eee0ad}
+.memory .emoji{font-size:46px;margin-bottom:10px}
+.memory h3{font-size:22px;color:#e5a913;margin-bottom:8px}
+.memory p{font-size:14px;line-height:1.7}
+
+.wish-box{
+  background:linear-gradient(135deg,#ffe98f,#ffd6a0);
+  border-radius:38px;padding:50px 30px;text-align:center;position:relative;overflow:hidden
+}
+.wish-box h2{font-size:44px;color:#886318}
+.wish-box p{max-width:650px;margin:14px auto;line-height:1.8;font-size:17px}
+.cake{font-size:78px;display:inline-block;cursor:pointer;transition:.2s}
+.cake:hover{transform:scale(1.12) rotate(-5deg)}
+.wish-result{font:600 23px 'Fredoka';color:#e5797d;min-height:34px;margin-top:10px}
+
+.final{
+  min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:linear-gradient(#fff9e7,#ffe9a2)
+}
+.final-dino{width:150px;height:150px;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:0 8px 0 #e8d281}
+.final h2{font-size:clamp(45px,7vw,75px);color:#e5aa18;margin:18px 0 10px}
+.final p{max-width:620px;margin:auto;font-size:18px;line-height:1.8}
+.footer-note{margin-top:25px;font-size:13px;color:#927e5d}
+
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:500}
+
+
+.memories-gallery-section{background:#fffaf0}
+/* Photo gallery: every image keeps its original aspect ratio. Nothing is cropped. */
+.memories-gallery{
+  columns:3 260px;
+  column-gap:18px;
+}
+.memory-photo{
+  position:relative;
+  display:inline-block;
+  width:100%;
+  margin:0 0 22px;
+  padding:8px;
+  border-radius:24px;
+  background:#fff;
+  border:2px solid #f4e3a8;
+  box-shadow:0 8px 0 #eadca8, 0 14px 25px rgba(91,72,41,.10);
+  break-inside:avoid;
+  -webkit-column-break-inside:avoid;
+}
+.memory-photo img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:16px;
+  object-fit:contain;
+  transition:transform .5s ease;
+}
+.memory-photo:hover img{transform:scale(1.025)}
+.memory-photo:after{
+  content:"♡";
+  position:absolute;
+  right:18px;
+  bottom:17px;
+  color:#fff;
+  font-size:27px;
+  text-shadow:0 2px 8px rgba(0,0,0,.25);
+  opacity:0;
+  transition:.25s;
+}
+.memory-photo:hover:after{opacity:1}
+.memory-photo:nth-child(2){transform:rotate(1deg)}
+.memory-photo:nth-child(4){transform:rotate(-1deg)}
+.memory-photo:nth-child(6){transform:rotate(1deg)}
+.memory-photo:nth-child(8){transform:rotate(-1deg)}
+
+/* Keep the existing couple/Nailong photos proportional too. */
+.nail-card img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+}
+.couple img{
+  width:100%;
+  height:auto;
+  max-height:none;
+  display:block;
+  object-fit:contain;
+}
+
+@media(max-width:800px){
+  .memories-gallery{
+    columns:2 150px;
+    column-gap:12px;
+  }
+  .memory-photo{
+    margin-bottom:15px;
+    padding:6px;
+  }
+  .memory-photo:after{display:none}
+}
+
+@media(max-width:800px){
+  .nav-links a{display:none}
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-copy{margin-left:auto;margin-right:auto}
+  .hero-art{margin-top:15px}
+  .hero-nailong{max-height:420px}
+  .gallery{grid-template-columns:1fr}
+  .memories{grid-template-columns:1fr}
+  section{padding:75px 5%}
+  .letter{padding:28px 22px}
+}
+</style>
+</head>
+
+<body>
+<div id="opening">
+  <div class="open-card">
+    <img src="nailong-cute.png" class="open-dino" alt="Nailong">
+    <h1>For My Love 💛</h1>
+    <p>Ada sesuatu kecil yang aku buat khusus buat kamu.<br>Tap untuk membukanya ♡</p>
+    <button class="open-btn" id="openBtn">Open my surprise ✨</button>
+  </div>
+</div>
+
+<canvas id="confetti"></canvas>
+
+<nav class="nav">
+  <div class="logo">🦕 for my love</div>
+  <div class="nav-links">
+    <a href="#letter">Letter</a>
+    <a href="#photos">Our Photos</a>
+    <a href="#memories-gallery">Memories</a>
+    <a href="#wish">Wish</a>
+    <button class="music" id="musicBtn">♫ Valentine</button>
+  </div>
+</nav>
+
+<audio id="song" loop preload="auto">
+  <source src="valentine.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">🎂 Today is your day!</div>
+      <h1>Happy<br><span>Birthday</span><br>Sayang 💛</h1>
+      <p class="hero-copy">
+        Kalau hadiah ini bisa ngomong, mungkin dia cuma akan bilang:
+        <b>“I love you.”</b> Tapi karena ini website, jadi aku tulis lebih panjang sedikit. 🥹
+      </p>
+      <a class="scroll-btn" href="#letter">💌 Read my little letter</a>
+    </div>
+
+    <div class="hero-art">
+      <img src="nailong-wave.png" class="hero-nailong" alt="Nailong">
+      <div class="sticker s1">💗</div>
+      <div class="sticker s2">⭐</div>
+      <div class="sticker s3">💛</div>
+    </div>
+  </div>
+</section>
+
+<section id="letter">
+  <div class="wrap">
+    <h2 class="title">A Letter For You 💌</h2>
+    <p class="subtitle">Hal-hal yang mungkin nggak selalu aku bilang langsung.</p>
+
+    <div class="letter">
+      <p>Happy birthdayy baobeii 🥺💛</p>
+      <p>
+        29 September 2026, your birthdayyy. ihiii i'm so excited sayangg,
+        your first birthday yang dirayakan sama akuu, in special age juga sayangg.
+        twentyyyyy yuhuuu!!
+      </p>
+      <p>
+        thankyouuu for all the little moments that we had yaa sayaangg,
+        darii ketawa kitaa tentang hal random, sampai momen sederhana ketika walangg cuman duduk bareng sajaa.
+        somehow it all matters because there's you in my life baby.
+      </p>
+      <p>
+        sayaangg i wish kamu sehatt selalu yaa bebb, selalu dimudahkan dengan semua hal yang kamu perjuangin ee,
+        dikelilingi orang-orang baikk dan yang sayang sama kamuu punyaa, ur family, ur friends, meeee hehehe
+        semogaa kamu happy celalu baobeii, makin makin suksess sayangg, banyak hal baik dateng ke hidup kamuu, amithofoo.
+        semogaa apapun yang kamu ai capaii tercapaikan yaa sayangg.
+      </p>
+      <p>
+        i hopee kita banyak merayakan semua banyak tanggal kedepannyaa bebebb,
+        banyak tempat untuk didatengin bareng barengg, take many shots of picturee,
+        and write many stories for our diary untill the forever yaa bebb.
+      </p>
+      <p>
+        I love you. More than anyone could ever explain. 🦕💛
+      </p>
+      <div class="sign">— your girl ♡</div>
+    </div>
+  </div>
+</section>
+
+<section id="photos" class="photo-section">
+  <div class="wrap">
+    <h2 class="title">Our Little World 🦕</h2>
+    <p class="subtitle">Some photos that always make me smilee.</p>
+
+    <div class="gallery">
+      <div class="nailong-pair">
+        <div class="nail-card">
+          <img src="nailong-wave.png" alt="Nailong waving">
+          <p>Our little mascot 💛</p>
+        </div>
+        <div class="nail-card">
+          <img src="nailong-cute.png" alt="Cute Nailong">
+          <p>Us, but in Nailong form 🥹</p>
+        </div>
+      </div>
+
+      <div class="couple">
+        <img src="our-photos-1.png" alt="Our photos">
+        <div class="couple-caption">"This is my favorite kind of memory." ♡</div>
+      </div>
+    </div>
+
+    <div style="height:30px"></div>
+
+    <div class="couple" style="transform:rotate(-1deg)">
+      <img src="our-photos-2.png" alt="Our photos in the car">
+      <div class="couple-caption">Just us, being us. 💗</div>
+    </div>
+  </div>
+</section>
+
+
+<section id="memories-gallery" class="memories-gallery-section">
+  <div class="wrap">
+    <h2 class="title">More Memories of Us 📸</h2>
+    <p class="subtitle">A few more little moments that I want to keep forever. ♡</p>
+
+    <div class="memories-gallery">
+      <div class="memory-photo portrait">
+        <img src="memory-01.png" alt="A memory of us">
+      </div>
+      <div class="memory-photo portrait">
+        <img src="memory-02.png" alt="A memory of us">
+      </div>
+      <div class="memory-photo landscape">
+        <img src="memory-03.png" alt="A memory of us">
+      </div>
+      <div class="memory-photo landscape">
+        <img src="memory-04.png" alt="A memory of us">
+      </div>
+      <div class="memory-photo portrait">
+        <img src="memory-05.png" alt="A memory of us">
+      </div>
+      <div class="memory-photo landscape">
+        <img src="memory-06.png" alt="A memory of us">
+      </div>
+      <div class="memory-photo landscape">
+        <img src="memory-07.png" alt="A memory of us">
+      </div>
+      <div class="memory-photo landscape">
+        <img src="memory-08.png" alt="A memory of us">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="title">Things I Love About You 🌻</h2>
+    <p class="subtitle">Just a few of the many little things that make me love you more every day.</p>
+
+    <div class="memories">
+      <div class="memory">
+        <div class="emoji">🫶</div>
+        <h3>Your Presence</h3>
+        <p>You don't always have to do something special. 
+        Sometimes, simply having you by my side is enough to make everything feel a little easier.</p>
+      </div>
+      <div class="memory">
+        <div class="emoji">😂</div>
+        <h3>Your Randomness</h3>
+        <p> I love all the random little moments we share — 
+        the silly jokes, the unexpected conversations, and the things that somehow become our favorite memories.</p>
+      </div>
+      <div class="memory">
+        <div class="emoji">🏠</div>
+        <h3>Our Little World</h3>
+        <p>I love the little world we've created together, 
+        filled with our stories, our laughter, our silly moments, and all the memories only we understand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wish">
+  <div class="wrap">
+    <div class="wish-box">
+      <div class="cake" id="cake">🎂</div>
+      <h2>Make A Wish! ✨</h2>
+      <p>
+        Close your eyes, make a wish, and think of everything you hope to find in this new chapter.
+  When you're ready, click the cake and let your wish come true. 💛🥺
+      </p>
+      <div class="wish-result" id="wishResult"></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div>
+    <img src="nailong-cute.png" class="final-dino" alt="Nailong">
+    <h2>Happy Birthday, My Love! 💛</h2>
+    <p>
+      Whatever happens next, I hope we keep choosing each other,
+      making silly memories, and growing together.
+      <br><br>
+      <b>Love you always. ♡</b>
+    </p>
+    <div class="footer-note">Made with love, a little bit of craziness, and Nailong.</div>
+  </div>
+</section>
+
+<script>
+const opening = document.getElementById('opening');
+const openBtn = document.getElementById('openBtn');
+const song = document.getElementById('song');
+const musicBtn = document.getElementById('musicBtn');
+
+openBtn.addEventListener('click', async ()=>{
+  opening.classList.add('hide');
+  try{
+    await song.play();
+    musicBtn.textContent='❚❚ Valentine';
+  }catch(e){
+    musicBtn.textContent='♫ Valentine';
+  }
+});
+
+musicBtn.addEventListener('click', async ()=>{
+  if(song.paused){
+    try{
+      await song.play();
+      musicBtn.textContent='❚❚ Valentine';
+    }catch(e){
+      alert('Browser tidak dapat memainkan lagu ini. Coba klik lagi ya 💛');
+    }
+  }else{
+    song.pause();
+    musicBtn.textContent='♫ Valentine';
+  }
+});
+
+const cake=document.getElementById('cake');
+const result=document.getElementById('wishResult');
+const canvas=document.getElementById('confetti');
+const ctx=canvas.getContext('2d');
+let pieces=[],running=false;
+function resize(){canvas.width=innerWidth;canvas.height=innerHeight}
+resize();addEventListener('resize',resize);
+
+cake.addEventListener('click',()=>{
+  result.textContent='✨ I hope your wish comes true. I love you! 💛';
+  pieces=[];
+  for(let i=0;i<150;i++){
+    pieces.push({
+      x:innerWidth/2+(Math.random()-.5)*80,
+      y:innerHeight*.55,
+      vx:(Math.random()-.5)*11,
+      vy:-Math.random()*12-3,
+      s:Math.random()*10+4,
+      r:Math.random()*6.28,
+      vr:(Math.random()-.5)*.35,
+      life:110+Math.random()*60
+    });
+  }
+  if(!running)animate();
+});
+function animate(){
+  running=true;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  pieces.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;p.vy+=.24;p.r+=p.vr;p.life--;
+    ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);
+    ctx.font=p.s*2+'px serif';
+    ctx.fillText(Math.random()>.5?'💛':'💗',0,0);
+    ctx.restore();
+  });
+  pieces=pieces.filter(p=>p.life>0&&p.y<innerHeight+60);
+  if(pieces.length)requestAnimationFrame(animate);
+  else{running=false;ctx.clearRect(0,0,canvas.width,canvas.height)}
+}
+</script>
+</body>
+</html>
